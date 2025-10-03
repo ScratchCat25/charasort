@@ -3,329 +3,708 @@ dataSet[dataSetVersion] = {};
 
 dataSet[dataSetVersion].options = [
   {
-    name: "Filter by Series Entry",
-    key: "series",
-    tooltip: "Check this to restrict to certain series.",
+    name: "Filter by gender",
+    key: "gender",
+    tooltip: "Check this to restrict to certain genders.",
     checked: false,
     sub: [
-      { name: "Books and CDs", key: "book" },
-      { name: "The Highly Responsive to Prayers", tooltip: "01 - Reiiden", key: "HRtP" },
-      { name: "The Story of Eastern Wonderland", tooltip: "02 - Fuumaroku", key: "SoEW" },
-      { name: "Phantasmagoria of Dim.Dream", tooltip: "03 - Yumejikuu", key: "PoDD" },
-      { name: "Lotus Land Story", tooltip: "04 - Gensoukyou", key: "LLS" },
-      { name: "Mystic Square", tooltip: "05 - Kaikidan", key: "MS" },
-      { name: "Embodiment of Scarlet Devil", tooltip: "06 - Koumakan", key: "EoSD" },
-      { name: "Perfect Cherry Blossom", tooltip: "07 - Youyoumu", key: "PCB" },
-      { name: "Immaterial and Missing Power", tooltip: "07.5 - Suimusou", key: "IaMP" },
-      { name: "Imperishable Night", tooltip: "08 - Eiyashou", key: "IN" },
-      { name: "Phantasmagoria of Flower View", tooltip: "09 - Kaeidzuka", key: "PoFV" },
-      { name: "Shoot the Bullet", tooltip: "09.5 - Bunkachou", key: "StB" },
-      { name: "Mountain of Faith", tooltip: "10 - Fuujinroku", key: "MoF" },
-      { name: "Scarlet Weather Rhapsody", tooltip: "10.5 - Hisouten", key: "SWR" },
-      { name: "Subterranean Animism", tooltip: "11 - Chireiden", key: "SA" },
-      { name: "Undefined Fantastic Object", tooltip: "12 - Seirensen", key: "UFO" },
-      { name: "Touhou Hisoutensoku", tooltip: "12.3 - Hisoutensoku", key: "Soku" },
-      { name: "Double Spoiler", tooltip: "12.5 - Bunkachou", key: "DS" },
-      { name: "Great Fairy Wars", tooltip: "12.8 - Daisensou", key: "GFW" },
-      { name: "Ten Desires", tooltip: "13 - Shinreibyou", key: "TD" },
-      { name: "Hopeless Masquerade", tooltip: "13.5 - Shinkirou", key: "HM" },
-      { name: "Double Dealing Character", tooltip: "14 - Kishinjou", key: "DDC" },
-      { name: "Impossible Spell Card", tooltip: "14.3 - Amanojaku", key: "ISC" },
-      { name: "Urban Legend in Limbo", tooltip: "14.5 - Shinpiroku", key: "ULiL" },
-      { name: "Legacy of Lunatic Kingdom", tooltip: "15 - Kanjuden", key: "LoLK" }
+      { name: "Male", tooltip: "Identifies as male", key: "male" },
+      { name: "Female", tooltip: "Identifies as female", key: "female" },
+      { name: "Non-binary", tooltip: "Anyone who does not identify as solely male or female", key: "enby" },
+      { name: "Transgender", tooltip: "Identifies opposite to birth gender", key: "trans" },
+      { name: "Cisgender", tooltip: "Identifies same gender as assigned at birth", key: "cis" },
+      { name: "Assigned male at birth", tooltip: "Born a male", key: "amab" },
+      { name: "Assigned female at birth", tooltip: "Born a female", key: "afab" },
     ]
   },
   {
-    name: "Filter by Stage Enemy Appearances",
-    key: "stage",
-    tooltip: "Check this to restrict to characters that appear in certain stages as enemies.",
+    name: "Filter by game",
+    key: "game",
+    tooltip: "What game the characters are from.",
     checked: false,
     sub: [
-      { name: "Stage 1", key: "st1" },
-      { name: "Stage 2", key: "st2" },
-      { name: "Stage 3", key: "st3" },
-      { name: "Stage 4", key: "st4" },
-      { name: "Stage 5/Penultimate", tooltip: "Stage 4 in 5-stage games, and Stage 8 in 9-stage games.", key: "st5" },
-      { name: "Stage 6/Final", key: "st6" },
-      { name: "Stage EX/Phantasm", key: "ex" }
+      { name: "Original", key: "original" },
+      { name: "Meltdown", key: "meltdown" },
+      { name: "World", key: "world" },
+      { name: "Subzero", key: "subzero" },
+      { name: "Trainees/fan characters", tooltip: "Levels/songs not in the game yet.", key: "trainee" },
+      { name: "Entities", tooltip: "Characters that aren't levels." key: "entity" },
+    ]
+  },
+    {
+    name: "Filter by difficulty",
+    key: "difficulty",
+    tooltip: "What in-game difficulty the characters are.",
+    checked: false,
+    sub: [
+      { name: "Easy", key: "easy" },
+      { name: "Normal", key: "normal" },
+      { name: "Hard", key: "hard" },
+      { name: "Harder", key: "harder" },
+      { name: "Insane", key: "insane" },
+      { name: "Demon", key: "demon" },
+      { name: "Easier than easy", key: "easier" },
+      { name: "Not applicable", key: "notapplicable"},
     ]
   },
   {
-    name: "Remove PC-98 Duplicates",
-    key: "pc98",
-    tooltip: "Check this to remove PC-98 characters with a Windows counterpart."
+    name: "Filter by birth year",
+    key: "age",
+    tooltip: "What year the levels were born in.",
+    checked: false,
+    sub: [
+      { name: "End of 2002", key: "2002" },
+      { name: "End of 2003", key: "2003" },
+      { name: "End of 2004", key: "2004" },
+      { name: "End of 2005", key: "2005" },
+      { name: "End of 2006", key: "2006" },
+      { name: "End of 2007", key: "2007" },
+      { name: "End of 2008", key: "2008" },
+      { name: "End of 2009", key: "2009" },
+      { name: "End of 2010", key: "2010" },
+      { name: "End of 2011", key: "2011" },
+      { name: "End of 2012", key: "2012" },
+      { name: "Start of 2013", key: "2013" },
+      { name: "Start of 2014", key: "2014" },
+      { name: "Start of 2015", key: "2015" },
+      { name: "Start of 2016", key: "2016" },
+      { name: "Unknown", key: "unknown" }
+    ]
+  },
+   {
+    name: "Filter by MBTI",
+    key: "mbti",
+    tooltip: "MBTI types.",
+    checked: false,
+    sub: [
+      { name: "INTJ", key: "intj" },
+      { name: "INTP", key: "intp" },
+      { name: "ENTJ", key: "entj" },
+      { name: "ENTP", key: "entp" },
+      { name: "INFJ", key: "infj" },
+      { name: "INFP", key: "infp" },
+      { name: "ENFJ", key: "enfj" },
+      { name: "ENFP", key: "enfp" },
+      { name: "ISTJ", key: "istj" },
+      { name: "ISFJ", key: "isfj" },
+      { name: "ESTJ", key: "estj" },
+      { name: "ESFJ", key: "esfj" },
+      { name: "ISTP", key: "istp" },
+      { name: "ISFP", key: "isfp" },
+      { name: "ESTP", key: "estp" },
+      { name: "ESFP", key: "esfp" }
+    ]
   },
   {
-    name: "Remove Non-Girls",
-    key: "notgirl",
-    tooltip: "Check this to remove all non-female characters."
+    name: "Remove spinoffs",
+    key: "spinoff",
+    tooltip: "Check this to remove all released levels not from the main game."
+  },
+  {
+    name: "Remove entities",
+    key: "entity",
+    tooltip: "Check this to remove all entities."
+  },
+  {
+    name: "Remove trainees/fan characters",
+    key: "trainee",
+    tooltip: "Check this to remove characters with songs/levels not yet added to the game."
+  },
+  {
+    name: "Remove the Challenge",
+    key: "challenge",
+    tooltip: "Check this to remove the Challenge."
   }
 ];
 
 dataSet[dataSetVersion].characterData = [
   {
-    name: "Hakurei Reimu",
-    img: "c5DqpgX.png",
+    name: "Stephanie/Stereo Madness",
     opts: {
-      series: ["book", "EoSD", "PCB", "IaMP", "IN", "PoFV", "StB", "MoF", "SWR", "SA", "UFO", "Soku", "DS", "TD", "HM", "DDC", "ISC", "ULiL", "LoLK"],
-      stage: ["st4"]
+      gender: ["male", "cis", "amab"],
+      game: ["original"],
+      difficulty: ["easy"],
+      age: ["2012"],
+      mbti: ["isfp"],
+      spinoff: false,
+      entity: false,
+      trainee: false,
+      challenge: false,
     }
   },
   {
-    name: "Kirisame Marisa",
-    img: "tJnkSzK.png",
+     name: "Quinn/Back On Track",
     opts: {
-      series: ["book", "EoSD", "PCB", "IaMP", "IN", "PoFV", "StB", "MoF", "SWR", "SA", "UFO", "Soku", "DS", "GFW", "TD", "HM", "DDC", "ISC", "ULiL", "LoLK"],
-      stage: ["st4", "ex"]
+      gender: ["male", "trans", "afab"],
+      game: ["original"],
+      difficulty: ["easy"],
+      age: ["2011"],
+      mbti: ["esfj"],
+      spinoff: false,
+      entity: false,
+      trainee: false,
+      challenge: false,
     }
   },
   {
-    name: "Rumia",
-    img: "0YT7QlS.png",
-    opts: { series: ["book", "EoSD", "StB", "HM"], stage: ["st1"] }
-  },
-  {
-    name: "Daiyousei",
-    img: "NWlZud3.png",
-    opts: { series: ["book", "EoSD"], stage: ["st2", "ex"] }
-  },
-  {
-    name: "Cirno",
-    img: "qdveFSy.png",
+     name: "Oliver/Polargeist",
     opts: {
-      series: [ "book", "EoSD", "PCB", "PoFV", "StB", "Soku", "GFW", "HM", "DDC", "ISC"
-      ],
-      stage: ["st2"]
+      gender: ["male", "cis", "amab"],
+      game: ["original"],
+      difficulty: ["normal"],
+      age: ["2010"],
+      mbti: ["infp"],
+      spinoff: false,
+      entity: false,
+      trainee: false,
+      challenge: false,
     }
   },
   {
-    name: "Hong Meiling",
-    img: "ptGp0x4.png",
-    opts: { series: ["book", "EoSD", "IaMP", "StB", "Soku"], stage: ["st3"] }
-  },
-  {
-    name: "Koakuma",
-    img: "vBKdDm4.png",
-    opts: { series: ["book", "EoSD"], stage: ["st4"] }
-  },
-  {
-    name: "Patchouli Knowledge",
-    img: "A7ZnuHo.png",
+    name: "Jade/Dry Out",
     opts: {
-      series: ["book", "EoSD", "IaMP", "StB", "MoF", "Soku", "HM"],
-      stage: ["st4", "ex"]
+      gender: ["male", "cis", "amab"],
+      game: ["original"],
+      difficulty: ["normal"],
+      age: ["2009"],
+      mbti: ["entp"],
+      spinoff: false,
+      entity: false,
+      trainee: false,
+      challenge: false,
     }
   },
   {
-    name: "Izayoi Sakuya",
-    img: "sgZPf11.png",
+    name: "Skye/Base After Base",
     opts: {
-      series: [ "book", "EoSD", "PCB", "IaMP", "IN", "PoFV", "StB", "MoF", "Soku", "HM", "DDC", "ISC"
-      ],
-      stage: ["st5", "st6"]
+      gender: ["female", "cis", "afab"],
+      game: ["original"],
+      difficulty: ["hard"],
+      age: ["2009"],
+      mbti: ["isfp"],
+      spinoff: false,
+      entity: false,
+      trainee: false,
+      challenge: false,
     }
   },
   {
-    name: "Remilia Scarlet",
-    img: "8UX7hKE.png",
+    name: "Lettie/Cant Let Go",
     opts: {
-      series: ["book", "EoSD", "IaMP", "IN", "StB", "MoF", "Soku", "HM", "ISC"],
-      stage: ["st6"]
+      gender: ["female", "cis", "afab"],
+      game: ["original"],
+      difficulty: ["hard"],
+      age: ["2008"],
+      mbti: ["esfj"],
+      spinoff: false,
+      entity: false,
+      trainee: false,
+      challenge: false,
     }
   },
   {
-    name: "Flandre Scarlet",
-    img: "OhaDcnc.png",
-    opts: { series: ["book", "EoSD", "StB"], stage: ["ex"] }
-  },
-  {
-    name: "Letty Whiterock",
-    img: "MgzqjFK.png",
-    opts: { series: ["book", "PCB", "StB", "HM"], stage: ["st1"] }
-  },
-  {
-    name: "Chen",
-    img: "ohmetZh.png",
+    name: "Ned/Jumper",
     opts: {
-      series: ["book", "PCB", "IaMP", "StB", "MoF", "Soku", "HM"],
-      stage: ["st2", "ex"]
+      gender: ["male", "cis", "amab"],
+      game: ["original"],
+      difficulty: ["harder"],
+      age: ["2008"],
+      mbti: ["enfp"],
+      spinoff: false,
+      entity: false,
+      trainee: false,
+      challenge: false,
     }
   },
   {
-    name: "Alice Margatroid",
-    img: "aDIf0pN.png",
+    name: "Tim/Time Machine",
     opts: {
-      series: ["book", "PCB", "IaMP", "IN", "StB", "MoF", "Soku", "HM"],
-      stage: ["st3"]
+      gender: ["male", "cis", "amab"],
+      game: ["original"],
+      difficulty: ["harder"],
+      age: ["2007"],
+      mbti: ["intp", "intj"],
+      spinoff: false,
+      entity: false,
+      trainee: false,
+      challenge: false,
     }
   },
   {
-    name: "Lily White",
-    img: "2Pr8b2N.png",
-    opts: { series: ["book", "PCB", "PoFV", "HM"], stage: ["st4", "ex"] }
-  },
-  {
-    name: "Lunasa Prismriver",
-    img: "htOMdDQ.png",
-    opts: { series: ["book", "PCB", "PoFV", "HM"], stage: ["st4"] }
-  },
-  {
-    name: "Merlin Prismriver",
-    img: "PrRPujP.png",
-    opts: { series: ["book", "PCB", "PoFV", "HM"], stage: ["st4"] }
-  },
-  {
-    name: "Lyrica Prismriver",
-    img: "ze79bFC.png",
-    opts: { series: ["book", "PCB", "PoFV", "HM"], stage: ["st4"] }
-  },
-  {
-    name: "Konpaku Youmu",
-    img: "WMjyRLJ.png",
+    name: "Charlotte/Cycles",
     opts: {
-      series: [ "book", "PCB", "IaMP", "IN", "PoFV", "StB", "MoF", "Soku", "TD", "HM", "ISC"
-      ],
-      stage: ["st5", "st6"]
+      gender: ["female", "cis", "afab"],
+      game: ["original"],
+      difficulty: ["harder"],
+      age: ["2007"],
+      mbti: ["esfj"],
+      spinoff: false,
+      entity: false,
+      trainee: false,
+      challenge: false,
     }
   },
   {
-    name: "Saigyouji Yuyuko",
-    img: "VT9mTGb.png",
+ name: "Zachary/xStep",
     opts: {
-      series: [ "book", "PCB", "IaMP", "IN", "StB", "MoF", "Soku", "TD", "HM", "ISC"
-      ],
-      stage: ["st1", "st6"]
+      gender: ["male", "cis", "amab"],
+      game: ["original"],
+      difficulty: ["insane"],
+      age: ["2006"],
+      mbti: ["estp"],
+      spinoff: false,
+      entity: false,
+      trainee: false,
+      challenge: false,
     }
   },
   {
-    name: "Yakumo Ran",
-    img: "rshnJPV.png",
+     name: "Candy/Clutterfunk",
     opts: {
-      series: ["book", "PCB", "IaMP", "IN", "StB", "MoF", "Soku", "HM"],
-      stage: ["ex"]
+      gender: ["female", "cis", "afab"],
+      game: ["original"],
+      difficulty: ["insane"],
+      age: ["2005"],
+      mbti: ["estj"],
+      spinoff: false,
+      entity: false,
+      trainee: false,
+      challenge: false,
     }
   },
   {
-    name: "Yakumo Yukari",
-    img: "qsceD4I.png",
+     name: "Juli/TOE",
     opts: {
-      series: ["book", "PCB", "IaMP", "IN", "StB", "MoF", "Soku", "HM", "ISC"],
-      stage: ["ex"]
+      gender: ["FEmale", "cis", "AFAB"],
+      game: ["original"],
+      difficulty: ["insane"],
+      age: ["2005"],
+      mbti: ["entp"],
+      spinoff: false,
+      entity: false,
+      trainee: false,
+      challenge: false,
     }
   },
   {
-    name: "Ibuki Suika",
-    img: "pLdMjQ3.png",
+     name: "Dylan/Electroman Adventures",
     opts: {
-      series: ["book", "IaMP", "StB", "MoF", "Soku", "DS", "HM", "ISC"],
-      stage: ["st6"]
+      gender: ["male", "cis", "amab"],
+      game: ["original"],
+      difficulty: ["insane"],
+      age: ["2006"],
+      mbti: ["esfj"],
+      spinoff: false,
+      entity: false,
+      trainee: false,
+      challenge: false,
     }
   },
   {
-    name: "Wriggle Nightbug",
-    img: "8DLUAPf.png",
-    opts: { series: ["book", "IN", "StB", "HM"], stage: ["st1"] }
-  },
-  {
-    name: "Mystia Lorelei",
-    img: "6KyhLqE.png",
-    opts: { series: ["book", "IN", "PoFV", "StB", "HM"], stage: ["st2"] }
-  },
-  {
-    name: "Kamishirasawa Keine",
-    img: "99w0Chm.png",
-    opts: { series: ["book", "IN", "StB", "HM", "ISC"], stage: ["st3", "ex"] }
-  },
-  {
-    name: "Inaba Tewi",
-    img: "yqNfNje.png",
-    opts: { series: ["book", "IN", "PoFV", "StB", "HM"], stage: ["st5"] }
-  },
-  {
-    name: "Reisen Udongein Inaba",
-    img: "PrYzRcC.png",
+name: "Leo/Clubstep",
     opts: {
-      series: ["book", "IN", "PoFV", "StB", "Soku", "HM", "LoLK"],
-      stage: ["st5"]
+      gender: ["male", "cis", "amab", "enby"],
+      game: ["original"],
+      difficulty: ["demon"],
+      age: ["2006"],
+      mbti: ["esfp"],
+      spinoff: false,
+      entity: false,
+      trainee: false,
+      challenge: false,
     }
   },
   {
-    name: "Yagokoro Eirin",
-    img: "ceo4DhK.png",
-    opts: { series: ["book", "IN", "StB", "HM"], stage: ["st6"] }
-  },
-  {
-    name: "Houraisan Kaguya",
-    img: "2YDuTk3.png",
-    opts: { series: ["book", "IN", "StB", "HM"], stage: ["st6"] }
-  },
-  {
-    name: "Fujiwara no Mokou",
-    img: "3zo4VKV.png",
-    opts: { series: ["book", "IN", "StB", "HM", "ISC", "ULiL"], stage: ["ex"] }
-  },
-  {
-    name: "Shameimaru Aya",
-    img: "8TLXMST.png",
+    name: "Cute child/Electro/Electrodynamix",
     opts: {
-      series: ["book", "PoFV", "StB", "MoF", "SWR", "Soku", "HM", "ISC"],
-      stage: ["st4"]
+      gender: ["male", "cis", "amab"],
+      game: ["original"],
+      difficulty: ["insane"],
+      age: ["2005"],
+      mbti: ["infj"],
+      spinoff: false,
+      entity: false,
+      trainee: false,
+      challenge: false,
     }
   },
   {
-    name: "Medicine Melancholy",
-    img: "IImsp7K.png",
-    opts: { series: ["book", "PoFV", "StB", "HM"], stage: ["st4"] }
-  },
-  {
-    name: "Kazami Yuuka",
-    img: "MZXJQq5.png",
-    opts: { series: ["book", "PoFV", "StB", "HM"], stage: ["st5"] }
-  },
-  {
-    name: "Onozuka Komachi",
-    img: "aX4WIH8.png",
+    name: "Chloe/Hexagon Force",
     opts: {
-      series: ["book", "PoFV", "StB", "MoF", "Soku", "HM"],
-      stage: ["st5"]
+      gender: ["female", "cis", "afab"],
+      game: ["original"],
+      difficulty: ["insane"],
+      age: ["2005"],
+      mbti: ["isfj"],
+      spinoff: false,
+      entity: false,
+      trainee: false,
+      challenge: false,
     }
   },
   {
-    name: "Shiki Eiki, Yamaxanadu",
-    img: "nPBvatH.png",
-    opts: { series: ["book", "PoFV", "StB", "HM"], stage: ["st6"] }
-  },
-  {
-    name: "Aki Shizuha",
-    img: "3pDRgvR.png",
-    opts: { series: ["SWR", "DS", "HM"], stage: ["st1"] }
-  },
-  {
-    name: "Aki Minoriko",
-    img: "bV0DaN7.png",
-    opts: { series: ["SWR", "DS", "HM"], stage: ["st1"] }
-  },
-  {
-    name: "Kagiyama Hina",
-    img: "J11NjNj.png",
-    opts: { series: ["SWR", "DS", "HM"], stage: ["st2"] }
-  },
-  {
-    name: "Kawashiro Nitori",
-    img: "4Ufced2.png",
-    opts: { series: ["SWR", "DS", "HM", "ISC", "ULiL"], stage: ["st3"] }
-  },
-  {
-    name: "Inubashiri Momiji",
-    img: "qGMjnYk.png",
-    opts: { series: ["SWR", "DS", "ISC"], stage: ["st4"] }
-  },
-  {
-    name: "Kochiya Sanae",
-    img: "ATTRSWU.png",
+    name: "Callum/Blast Processing",
     opts: {
-      series: ["SWR", "SA", "UFO", "Soku", "DS", "TD", "HM", "ISC", "LoLK"],
-      stage: ["st5", "ex"]
+      gender: ["male", "cis", "amab"],
+      game: ["original"],
+      difficulty: ["harder"],
+      age: ["2007"],
+      mbti: ["esfj"],
+      spinoff: false,
+      entity: false,
+      trainee: false,
+      challenge: false,
+    }
+  },
+  {
+    name: "Astra/TOE 2",
+    opts: {
+      gender: ["female", "cis", "afab"],
+      game: ["original"],
+      difficulty: ["demon"],
+      age: ["2006"],
+      mbti: ["enfj", "infj", "esfj"],
+      spinoff: false,
+      entity: false,
+      trainee: false,
+      challenge: false,
+    }
+  },
+  {
+    name: "Geometrical Dominator",
+    opts: {
+      gender: ["male", "enby", "amab"],
+      game: ["original"],
+      difficulty: ["harder"],
+      age: ["2007"],
+      mbti: ["entp"],
+      spinoff: false,
+      entity: false,
+      trainee: false,
+      challenge: false,
+    }
+  },
+  {
+    name: "Ares/Deadlocked",
+    opts: {
+      gender: ["male", "cis", "amab"],
+      game: ["original"],
+      difficulty: ["demon"],
+      age: ["2005"],
+      mbti: ["intp", "intj"],
+      spinoff: false,
+      entity: false,
+      trainee: false,
+      challenge: false,
+    }
+  },
+  {
+    name: "Aspen/Fingerdash",
+    opts: {
+      gender: ["female", "cis", "afab"],
+      game: ["original"],
+      difficulty: ["insane"],
+      age: ["2005"],
+      mbti: ["infp"],
+      spinoff: false,
+      entity: false,
+      trainee: false,
+      challenge: false,
+    }
+  },
+  {
+    name: "Dash",
+    opts: {
+      gender: ["male", "cis", "amab"],
+      game: ["original"],
+      difficulty: ["insane"],
+      age: ["2005"],
+      mbti: ["estp"],
+      spinoff: false,
+      entity: false,
+      trainee: false,
+      challenge: false,
+    }
+  },
+  {
+    name: "Meghan/Explorers",
+    opts: {
+      gender: ["female", "cis", "afab"],
+      game: ["original"],
+      difficulty: ["demon"],
+      age: ["2004"],
+      mbti: ["entj"],
+      spinoff: false,
+      entity: false,
+      trainee: true,
+      challenge: false,
+    }
+  },
+  {
+    name: "Eden/The Challenge",
+    opts: {
+      gender: ["female", "cis", "afab"],
+      game: ["original"],
+      difficulty: ["easier"],
+      age: ["unknown"],
+      mbti: ["istj"],
+      spinoff: false,
+      entity: false,
+      trainee: false,
+      challenge: true,
+    }
+  },
+  {
+    name: "Tiffany/TOE 3",
+    opts: {
+      gender: ["female", "cis", "afab"],
+      game: ["trainee"],
+      difficulty: ["notapplicable"],
+      age: ["unknown"],
+      mbti: ["intj"],
+      spinoff: false,
+      entity: false,
+      trainee: true,
+      challenge: false,
+    }
+  },
+  {
+    name: "Bella/TOE 4",
+    opts: {
+      gender: ["female", "cis", "afab"],
+      game: ["trainee"],
+      difficulty: ["notapplicable"],
+      age: ["unknown"],
+      mbti: ["esfj"],
+      spinoff: false,
+      entity: false,
+      trainee: true,
+      challenge: false,
+    }
+  },
+  {
+    name: "Morgan/The Seven Seas",
+    opts: {
+      gender: ["enby", "afab"],
+      game: ["meltdown"],
+      difficulty: ["easy"],
+      age: ["2007"],
+      mbti: ["infp"],
+      spinoff: true,
+      entity: false,
+      trainee: false,
+      challenge: false,
+    }
+  },
+  {
+    name: "Eric/Viking Arena",
+    opts: {
+      gender: ["male", "cis", "amab"],
+      game: ["meltdown"],
+      difficulty: ["normal"],
+      age: ["2004"],
+      mbti: ["esfj"],
+      spinoff: true,
+      entity: false,
+      trainee: false,
+      challenge: false,
+    }
+    }
+  },
+  {
+    name: "Ash/Airborne Robots",
+    opts: {
+      gender: ["male", "cis", "amab"],
+      game: ["meltdown"],
+      difficulty: ["hard"],
+      age: ["2006"],
+      mbti: ["isfj"],
+      spinoff: true,
+      entity: false,
+      trainee: false,
+      challenge: false,
+    }
+  },
+  {
+    name: "Kiara/Press Start",
+    opts: {
+      gender: ["female", "trans", "amab"],
+      game: ["subzero"],
+      difficulty: ["normal"],
+      age: ["2005"],
+      mbti: ["intp"],
+      spinoff: true,
+      entity: false,
+      trainee: false,
+      challenge: false,
+    }
+  },
+  {
+    name: "Feral cat/Nock Em",
+    opts: {
+      gender: ["enby", "afab"],
+      game: ["subzero"],
+      difficulty: ["hard"],
+      age: ["2002"],
+      mbti: ["entp"],
+      spinoff: true,
+      entity: false,
+      trainee: false,
+      challenge: false,
+    }
+  },
+  {
+    name: "Madeleine/Power Trip",
+    opts: {
+      gender: ["female", "cis", "afab"],
+      game: ["subzero"],
+      difficulty: ["harder"],
+      age: ["2003"],
+      mbti: ["istj"],
+      spinoff: true,
+      entity: false,
+      trainee: false,
+      challenge: false,
+    }
+  },
+  {
+    name: "Yuri/Payload",
+    opts: {
+      gender: ["male", "cis", "amab"],
+      game: ["world"],
+      difficulty: ["easier"],
+      age: ["2016"],
+      mbti: ["isfj"],
+      spinoff: true,
+      entity: false,
+      trainee: false,
+      challenge: false,
+    }
+  },
+  {
+    name: "Michael/Lenire/Beast Mode",
+    opts: {
+      gender: ["male", "cis", "amab"],
+      game: ["world"],
+      difficulty: ["easier"],
+      age: ["2016"],
+      mbti: ["istp"],
+      spinoff: true,
+      entity: false,
+      trainee: false,
+      challenge: false,
+    }
+  },
+  {
+    name: "Maria/Machina",
+    opts: {
+      gender: ["female", "cis", "afab"],
+      game: ["world"],
+      difficulty: ["easier"],
+      age: ["2016"],
+      mbti: ["isfp"],
+      spinoff: true,
+      entity: false,
+      trainee: false,
+      challenge: false,
+    }
+  },
+  {
+    name: "Mallory/Years",
+    opts: {
+      gender: ["female", "cis", "afab"],
+      game: ["world"],
+      difficulty: ["easier"],
+      age: ["2015"],
+      mbti: ["intj"],
+      spinoff: true,
+      entity: false,
+      trainee: false,
+      challenge: false,
+    }
+  },
+  {
+    name: "Max/Frontlines",
+    opts: {
+      gender: ["male", "cis", "amab"],
+      game: ["world"],
+      difficulty: ["easier"],
+      age: ["2014"],
+      mbti: ["esfp"],
+      spinoff: true,
+      entity: false,
+      trainee: false,
+      challenge: false,
+    }
+  },
+  {
+    name: "Space Pirates",
+    opts: {
+      gender: ["male", "cis", "amab"],
+      game: ["world"],
+      difficulty: ["easier"],
+      age: ["2015"],
+      mbti: ["intj", "esfj"],
+      spinoff: true,
+      entity: false,
+      trainee: false,
+      challenge: false,
+    }
+  },
+  {
+    name: "Sebastian/Striker",
+    opts: {
+      gender: ["male", "cis", "amab"],
+      game: ["world"],
+      difficulty: ["easier"],
+      age: ["2013"],
+      mbti: ["estp"],
+      spinoff: true,
+      entity: false,
+      trainee: false,
+      challenge: false,
+    }
+  },
+  {
+    name: "Evie/Embers",
+    opts: {
+      gender: ["female", "cis", "afab"],
+      game: ["world"],
+      difficulty: ["easier"],
+      age: ["2015"],
+      mbti: ["infj"],
+      spinoff: true,
+      entity: false,
+      trainee: false,
+      challenge: false,
+    }
+  },
+  {
+    name: "Katie/Round 1",
+    opts: {
+      gender: ["female", "cis", "afab"],
+      game: ["world"],
+      difficulty: ["easier"],
+      age: ["2014"],
+      mbti: ["estj"],
+      spinoff: true,
+      entity: false,
+      trainee: false,
+      challenge: false,
+    }
+  },
+  {
+    name: "Moni/Monster Dance Off",
+    opts: {
+      gender: ["male", "cis", "amab"],
+      game: ["world"],
+      difficulty: ["easier"],
+      age: ["2013"],
+      mbti: ["enfj"],
+      spinoff: true,
+      entity: false,
+      trainee: false,
+      challenge: false,
     }
   },
   {
